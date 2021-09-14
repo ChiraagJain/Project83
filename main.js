@@ -20,7 +20,7 @@ width = screen.width;
 canvas.addEventListener("touchstart",my_touch_start);
 function my_touch_start(e) {
     color = document.getElementById("color").value;
-width_of_line = document.getElementById("Width_of_line").value;
+width_of_line = document.getElementById("Width").value;
 radius = document.getElementById("radius").value;
     mouse_event = "mousedown";
 
