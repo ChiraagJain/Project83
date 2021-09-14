@@ -1,12 +1,11 @@
 var mouse_event = "Empty";
-var last_position_of_x,last_position_of_y;
+
 
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
-ctx.arc
-color ="black";
-width_of_line ="2";
-radius ="30";
+color ="Empty";
+width_of_line = "Empty";
+radius = "Empty";
 width = screen.width;
     new_width = screen.width - 70;
     new_height = screen.height - 300;
@@ -19,14 +18,13 @@ width = screen.width;
 
 canvas.addEventListener("touchstart",my_touch_start);
 function my_touch_start(e) {
-    color = document.getElementById("color").value;
-width_of_line = document.getElementById("Width").value;
-radius = document.getElementById("radius").value;
-    mouse_event = "mousedown";
-
-    last_position_of_x=e.touches[0].clientX-canvas.offsetLeft;
-        last_position_of_y=e.touches[0].clientY-canvas.offsetTop;
+    console.log("my touch start");
+        color = document.getElementById("color").value;
+        width_of_line = document.getElementById("width").value;
+        radius = document.getElementById("radius").value;
 }
+
+    
 canvas.addEventListener("touchmove",my_touch_move);
 function my_touch_move(e) {
     current_position_of_touch_x = e.touches[0].clientX - canvas.offsetLeft;
@@ -38,14 +36,10 @@ function my_touch_move(e) {
         ctx.arc(current_position_of_touch_x,current_position_of_touch_y,radius,0,2*Math.PI);
         ctx.stroke();
 
-        console.log("last position of x and y cordinate =");
-        console.log("x ="+ last_position_of_x +"y ="+ last_position_of_y);
         console.log("current position of x and y cordinate =");
         console.log("x ="+ current_position_of_touch_x +"y ="+ current_position_of_touch_y);   
         
-        last_position_of_x = current_position_of_touch_x; 
-        last_position_of_y = current_position_of_touch_y;
-    }
+        }
  
  function clear_area(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
